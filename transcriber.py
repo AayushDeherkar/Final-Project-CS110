@@ -1,24 +1,18 @@
 import speech_recognition as sr
 
 def main():
-    # Create a Recognizer object
     aud = sr.Recognizer()
-    
-    # The path to your audio file
     sound = "aud1.WAV"
     
-    # Use sr.AudioFile to read the audio file
+    #read the audio file
     with sr.AudioFile(sound) as source:
         print("Listening to the audio...")
-        audio_data = aud.record(source)  # Record the audio
+        audio_data = aud.record(source) 
     
     try:
-        # Convert the speech to text using Google Cloud Speech-to-Text
+        # Convert the speech to text
         text = aud.recognize_google(audio_data)
+        open 
         print("Converted audio is: " + text)
-    except sr.UnknownValueError:
-        print("Google Cloud Speech could not understand the audio")
-    except sr.RequestError as e:
-        print(f"Could not request results from Google Cloud Speech service; {e}")
-
-main()
+    except:
+        print("file not found")
